@@ -12,7 +12,9 @@
  * sumDouble(5, 5); // 20
  */
 export function sumDouble(num1, num2) {
-  /* TODO */
+  let sum = num1 + num2;
+  if (num1 === num2) return 2 * sum;
+  else return sum;
 }
 
 /**
@@ -28,7 +30,8 @@ export function sumDouble(num1, num2) {
  * makes10(4, 4); // false
  */
 export function makes10(num1, num2) {
-  /* TODO */
+  if (num1 === 10 || num2 === 10 || num1 + num2 === 10) return true;
+  else return false;
 }
 
 /**
@@ -46,7 +49,8 @@ export function makes10(num1, num2) {
  * near100(105, 10); // true
  */
 export function near100(n, distance) {
-  /* TODO */
+  if (Math.abs(100 - n) <= distance) return true;
+  else return false;
 }
 
 /**
@@ -63,7 +67,8 @@ export function near100(n, distance) {
  * isMultiple35(7); // false
  */
 export function isMultiple35(n) {
-  /* TODO */
+  if (n % 3 === 0 || n % 5 === 0) return true;
+  else return false;
 }
 
 /**
@@ -81,7 +86,10 @@ export function isMultiple35(n) {
  * shareLastDigit(10, 21); // false
  */
 export function shareLastDigit(num1, num2) {
-  /* TODO */
+  let digitOne = num1 % 10;
+  let digitTwo = num2 % 10;
+  if (digitOne === digitTwo) return true;
+  else return false;
 }
 
 /**
@@ -98,7 +106,8 @@ export function shareLastDigit(num1, num2) {
  * isColdAndHot(10, 50); // false
  */
 export function isColdAndHot(temp1, temp2) {
-  /* TODO */
+  if ((temp1 < 0 && temp2 > 100) || (temp1 > 100 && temp2 < 0)) return true;
+  else return false;
 }
 
 /**
@@ -114,7 +123,12 @@ export function isColdAndHot(temp1, temp2) {
  * makeABBA("a", "b"); // "abba"
  */
 export function makeABBA(A, B) {
-  /* TODO */
+  let word = "";
+  word += A;
+  word += B;
+  word += B;
+  word += A;
+  return word;
 }
 
 /**
@@ -135,7 +149,9 @@ export function makeABBA(A, B) {
  * makeSLS("a", "abc"); // "aabca"
  */
 export function makeSLS(str1, str2) {
-  /* TODO */
+  if (str1.length > str2.length) {
+    return str2 + str1 + str2;
+  } else return str1 + str2 + str1;
 }
 
 /**
@@ -156,7 +172,10 @@ export function makeSLS(str1, str2) {
  * canEnterClub(5, 5); // 1
  */
 export function canEnterClub(you, date) {
-  /* TODO */
+  if (you <= 2 || date <= 2) {
+    return 0;
+  } else if (you >= 8 || date >= 8) return 2;
+  else return 1;
 }
 
 /**
@@ -177,5 +196,8 @@ export function canEnterClub(you, date) {
  * shouldAnswerPhone(true, true, false); // true
  */
 export function shouldAnswerPhone(isMorning, isBoss, isAsleep) {
-  /* TODO */
+  if (isAsleep) return false;
+  if (isMorning && isBoss) return true;
+  else if (isMorning) return false;
+  return true;
 }
